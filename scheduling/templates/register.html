@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+{% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="{% static "scheduling/css/login.css" %}">
+    {% comment %} <link href="{% static "scheduling/css/home.css" %}" rel="stylesheet"> {% endcomment %}
+</head>
+<body>
+    {% load static %}
+    <div class="nav">
+        <ul>
+            <!-- <li><a href="">BLOG</a></li> -->
+            <li><a href="\">Home</a></li>
+            <li><a href="\login">Login</a></li>
+            <li><a href="\signup">Register</a></li>
+        </ul>
+    </div>
+    <div class="login">
+        <form action="" method ="POST">
+            {% for message in messages %}
+            <div class="alret-{{message.tags}} alert-dismissible fade show" role='alert'>
+                <strong>
+                    <center>{{message}}</center>
+                </strong>
+                <button type ='button' class ='close' data-dimiss='alert' aria-label='close'> 
+                    <span aria-hidden='true'>&times;</span> 
+                </button>     
+            </div>
+        {% endfor %}
+        {% csrf_token %}
+        <h1>REGISTER</h1>
+        <form action="" class= 'login' method = "POST">
+            {% csrf_token %}
+            <h1>REGISTER</h1>
+            {{form.username.label}}
+            {{form.username}}
+            {{form.email.label}}
+            {{form.email}}
+            {{form.password1.label}}
+            {{form.password1}}
+            {{form.password2.label}}
+            {{form.password2}}
+            {{form.submit}}
+            <button type="submit">SUBMIT</button>
+            <p>{{form.errors}}</p>
+        </form> 
+
+    </div>
+</body>
+</html>

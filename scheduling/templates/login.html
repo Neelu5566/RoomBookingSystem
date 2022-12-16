@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    {% load static %}
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="{% static "scheduling/css/login.css" %}">
+</head>
+<body>
+    {% load static %}
+    <div class="nav">
+        <ul>
+            <!-- <li><a href="">BLOG</a></li> -->
+            <li><a href="\">Home</a></li>
+            <li><a href="\login">Login</a></li>
+            <li><a href="\signup">Register</a></li>
+        </ul>
+    </div>
+
+    <!-- <div class="login"> -->
+        <form action="" class = 'login' method = 'POST'>
+            {%csrf_token%}
+            <h1>LOGIN</h1>
+            <label for="username">User name</label>
+            <input type="text" name="username" id="username">
+            <label for="password">Password</label>
+            <input type="password" name="password" id="password">
+            <button type="submit">SUBMIT</button>
+        
+            {%for message in messages%}
+                <p style = "color:red">{{message}}</p>
+            {%endfor%}
+            </form>
+    <!-- </div> -->
+</body>
+</html>

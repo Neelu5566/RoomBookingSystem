@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="{% static "scheduling/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "scheduling/css/form-validation.css" %}">
+
+  </head style = marginleft : 10px>``
+
+
+  <body class="bg-light" style ="margin-left:160px; margin-top: 40px;">
+    {% load static %}
+    <div class="container">
+
+
+    <div class="row g-0">
+      
+
+      <div class="col-md-7 col-lg-10">
+        <h1 class="mb-3" style="padding-top:40px; padding-left:65px" >BOOKING DETAILS</h1>
+          <form action="" method ="POST">
+              {% for message in messages %}
+              <div class="alret-{{message.tags}} alert-dismissible fade show" role='alert'>
+                  <strong>
+                      <center>{{message}}</center>
+                  </strong>
+                  <button type ='button' class ='close' data-dimiss='alert' aria-label='close'> 
+                      <span aria-hidden='true'>&times;</span> 
+                  </button>     
+              </div>
+          {% endfor %}
+          {% csrf_token %}
+
+          <div class="row g-3">
+
+            <div class="col-12">
+              <label for="firstName" class="form-label">Full Name</label>
+              <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your name" value="" required>
+              <div class="invalid-feedback">
+                Valid Full Name is required.
+              </div>
+            </div>
+
+
+            <div class="col-12 ">
+              <label for="birthDate" class="form-label">Booking Date</label>
+              <input type="date" id="birthDate" name="date" class="form-control" >
+              <div class="invalid-feedback">
+                Valid Date is required.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="country" class="form-label">Time Slot</label>
+              <select class="form-select" name="slot" id="country" required>
+                <option value="">Choose...</option>
+                <option>1 hr</option>
+                <option>2 hr</option>
+                <option>3 hr</option>
+                <option>4 hr+</option>
+              </select>
+              <div class="invalid-feedback">
+                Please select a valid country.
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="order" class="form-label">From</label>
+              <input type="text" class="form-control" name="stime" id="from" placeholder="hh:mm" value="" required>
+              <div class="invalid-feedback">
+                Valid Time is required.
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="state" class="form-label">Select</label>
+              <select class="form-select" name="sparity" id="select1" required>
+                <option value="">Choose...</option>
+                <option>AM</option>
+                <option>PM</option>
+              </select>
+
+              <div class="invalid-feedback">
+                Please provide crct value.
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="order" class="form-label">To</label>
+              <input type="text" class="form-control" name ="etime" id="to" placeholder="hh:mm" value="" required>
+              <div class="invalid-feedback">
+                Valid Time is required.
+              </div>
+            </div>
+
+            <div class="col-3">
+              <label for="district" class="form-label">Select</label>
+              <select class="form-select" name='eparity'> id="select2" required>
+                <option value=""Choose...</option>
+                <option>AM</option>
+                <option>PM</option>
+
+              </select>
+              <div class="invalid-feedback">
+                Please provide crct value.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="firstName" class="form-label">Description</label>
+              <input type="text" class="form-control" name= "description" id="description" placeholder="" value="" required>
+              <div class="invalid-feedback">
+                Description is mandatory.
+              </div>
+            </div>
+
+            <hr class="my-4">
+
+            <div style="padding-left : 175px">
+              <a href ="/success"><button class="w-85 btn btn-primary btn-lg" type="submit">BOOK NOW</button></a>
+            </div>
+
+
+        </form>
+      </div>
+    </div>
+  </main>
+
+  
+</div>
+
+
+    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="{% static "scheduling/json/form-validation.js" %}"></script>
+    
+    
+
+  </body>
+</html>

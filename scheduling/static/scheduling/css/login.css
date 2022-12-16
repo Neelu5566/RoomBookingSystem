@@ -1,0 +1,124 @@
+body{
+    background-color: #ffffff;
+    margin: 0;
+}
+.nav{
+    background-color: #006aff;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: left;
+    padding: 2px;
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+.nav ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+}
+.nav ul li{
+    padding:0 15px;
+}.nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: larger;
+    margin-top: 5px;
+}
+.nav ul li a:hover{
+    color: rgb(52, 241, 255);
+    text-decoration: none;
+}
+.login{
+    /* display: flex;
+    align-items: center; */
+    width: 35%;
+    /* margin-top:4rem;
+    margin-left: 3rem; */
+    margin:auto;
+    margin-top: 3rem;
+    border: 3px solid #f1f1f1;
+    background-color: rgb(255, 255, 255);
+}
+.login label{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: larger;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 100%;
+    font-weight: bolder;
+}
+.login input{
+    width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+.login button{
+    width: 100%;
+    background-color: #4273e4;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight:bold;
+}
+.login button:hover{
+    background-color: #004cff;
+}
+.login h1{
+    text-align: center;
+    /* font-size: larger;
+    margin-top: 5px; */
+}
+
+.blog{
+    width: 40%;
+    height: 50%;
+    /* display: flex;
+    justify-content: center; */
+    /* align-items: center; */
+    margin:auto;
+    /* margin-top: 3rem; */
+    border: 3px solid #f1f1f1;
+    background-color: rgb(255, 255, 255);
+}
+.blog label{
+    width: 100%;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    font-size: larger;
+    margin-top: 5px;
+    margin-left: 5px;
+    width: 100%;
+    font-weight: bolder;
+}
+.blog input,textarea{
+  width: 100%;
+  padding: 12px 20px;
+  margin: 10px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+
+.title {
+    width: 99%;
+    height: 20px;
+    margin: 15px 0;
+}
+
+.submit_button {
+    padding: 10px 5px;
+    background-color: #4273e4;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    font-weight:bold;
+}

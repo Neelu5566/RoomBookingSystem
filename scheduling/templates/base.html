@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+{% load static %}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Scheduling Resources on IIITDWD Campus </title>
+  <link rel="stylesheet" href="{% static "scheduling/css/home.css" %}" type="text/css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css" integrity="sha512-UTNP5BXLIptsaj5WdKFrkFov94lDx+eBvbKyoe1YAfjeRPC+gT5kyZ10kOHCfNZqEui1sxmqvodNUx3KbuYI/A==" crossorigin="anonymous"
+    referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha512-sMXtMNL1zRzolHYKEujM2AqCLUR9F2C4/05cdbxjjLSRvMQIciEPCQZo++nk7go3BtSuK9kfa/s+a4f4i5pLkw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+
+<body>
+{% load static %}
+
+  <header>
+    <div class="content flex_space"> 
+      <div class="logo">
+        
+        <img src= "scheduling\logon.jpg" alt="">
+      </div>
+      <div class="navlinks">
+        <ul id="menulist">
+          <li><a href="#home">home</a> </li>
+          <li><a href="#about">about</a> </li>
+          <li><a href="#rooms">rooms</a> </li>
+          <li><a href="#contact">contact</a> </li>
+          
+          
+          
+          <li> <button class="primary-btn">BOOK NOW</button> </li>
+        </ul>
+        <span class="fa fa-bars" onclick="menutoggle()"></span>
+      </div>
+    </div>
+  </header>
+
+
+  <script>
+    var menulist = document.getElementById('menulist');
+    menulist.style.maxHeight = "0px";
+
+    function menutoggle() {
+      if (menulist.style.maxHeight == "0px") {
+        menulist.style.maxHeight = "100vh";
+      } else {
+        menulist.style.maxHeight = "0px";
+      }
+    }
+  </script>
+
+
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha512-bPs7Ae6pVvhOSiIcyUClR7/q2OAsRiovw4vAkX+zJbw3ShAeeqezq50RIIcIURq7Oa20rW2n2q+fyXBNcU9lrw==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.js" integrity="sha512-gY25nC63ddE0LcLPhxUJGFxa2GoIyA5FLym4UJqHDEMHjp8RET6Zn/SHo1sltt3WuVtqfyxECP38/daUc/WVEA==" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script>
+    $('.owl-carousel').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+
+  <section class="gallery">
+    <div class="container top">
+      <div class="heading">
+        
+        <h2>Live Events</h2>
+        <p>The below rooms are currently booked for the ongoing events.
+      </div>
+    </div>
+
+    <div class="content mtop">
+      <div class="owl-carousel owl-carousel1 owl-theme">
+        <div class="items">
+          <div class="img">
+            <img src="scheduling/m-block.jpg"  alt="">
+            <p>The above room is currently booked for an event.
+          </div>
+          
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="scheduling\e-block.JPG" alt="">
+            
+            <p>The above room is currently booked for an event.
+          </div>
+          
+        </div>
+        <div class="items">
+          <div class="img">
+            <img src="scheduling\gate.jpg" alt="">
+            <p>The above room is currently booked for an event.
+          </div>
+
+        </div>
+        
+        
+        
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: true,
+      dots: false,
+      autoplay: true,
+      autoplayTimeout: 1000,
+      autoplayHoverPause: true,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2,
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+
+<section class="gallery">
+  <div class="container top">
+    <div class="heading">
+      
+      <h2>Upcoming Events</h2>
+      <p>These are the events which are scheduled to happen in the forthcoming hours.
+    </div>
+  </div>
+
+  <div class="content mtop">
+    <div class="owl-carousel owl-carousel1 owl-theme">
+      <div class="items">
+        <div class="img">
+          <img src="scheduling\m-block.jpg" alt="">
+          <p>The above room is booked for a scheduled event.
+        </div>
+        
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="scheduling\e-block.JPG" alt="">
+          <p>The above room is booked for a scheduled event.
+        </div>
+        
+      </div>
+      <div class="items">
+        <div class="img">
+          <img src="scheduling/gate.jpg" alt="">
+          <p>The above room is booked for a scheduled event.
+        </div>
+
+      </div>
+      
+      
+    </div>
+  </div>
+</section>
+
+<script>
+  $('.owl-carousel1').owlCarousel({
+    loop: true,
+    margin: 0,
+    nav: true,
+    dots: false,
+    autoplay: true,
+    autoplayTimeout: 1000,
+    autoplayHoverPause: true,
+    navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+    responsive: {
+      0: {
+        items: 1
+      },
+      768: {
+        items: 2,
+      },
+      1000: {
+        items: 3
+      }
+    }
+  })
+</script>
+
+
+  <section class="rooms">
+    <div class="container top">
+      <div class="heading">
+
+        <h2>Booking Rooms</h2>
+        <p>All the available rooms in IIIT Dharwad where you can plan your meetings in a sophisticated environment.
+        </p>
+      </div>
+
+      <div class="content mtop">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          <div class="items">
+
+            <div class="text">
+              <h2>240 Seater</h2>
+              
+              <p>This room gives you 240 seats and 2 screens with a facility of projector equipped in it.
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="items">
+
+            <div class="text">
+              <h2>120 Seater Room - 1</h2>
+              
+              <p>This room gives you 120 seats and 1 screen equipped with projector.
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            
+            <div class="text">
+              <h2>120 Seater Room - 2</h2>
+              
+              <p>This also one of the room which gives you 120 seats and 1 screen equipped with projector.
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="items">
+          
+            <div class="text">
+              <h2>Personal Meeting Room</h2>
+              <p>This room is designed for the professional meetings. 
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            
+            <div class="text">
+              <h2>Video Conference Room</h2>
+              
+              <p>This room is basically designed for the high power meetings to be conducted by the faculties.
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                
+              </div>
+            </div>
+          </div>
+          <div class="items">
+            
+            <div class="text">
+              <h2>Meeting Room</h2>
+              
+              <p>This is just one other room where meetings are scheduled.
+              </p>
+              <div class="button flex">
+                <button class="primary-btn">BOOK NOW</button>
+                
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    $('.owl-carousel1').owlCarousel({
+      loop: true,
+      margin: 40,
+      nav: true,
+      dots: false,
+      navText: ["<i class = 'fa fa-chevron-left'></i>", "<i class = 'fa fa-chevron-right'></i>"],
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 2,
+          margin: 10,
+        },
+        1000: {
+          items: 3
+        }
+      }
+    })
+  </script>
+
+  <section class="services top">
+    <div class="container">
+      <div class="heading">
+        
+        <h2>Our Services</h2>
+        <p>You can book your refreshments for your palnned meetings.
+      </div>
+
+
+      <div class="content flex_space">
+        <div class="left grid2">
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-champagne-glasses"></i>
+              <h3>Cold Beverages</h3>
+            </div>
+          </div>
+
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-utensils"></i>
+              <h3>Snacks</h3>
+            </div>
+          </div>
+          <div class="box">
+            <div class="text">
+              <i class="fa-solid fa-spa"></i>
+              <h3>High Tea/Coffee</h3>
+            </div>
+          </div>
+        </div>
+        <div class="right">
+          <img src="images/service.png" alt="">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+
+
+  <script>
+    $('.owl-carousel2').owlCarousel({
+      loop: true,
+      margin: 0,
+      nav: false,
+      dots: true,
+      responsive: {
+        0: {
+          items: 1
+        },
+        768: {
+          items: 1,
+        },
+        1000: {
+          items: 1
+        }
+      }
+    })
+  </script>
+
+
+
+
+
+  <footer>
+    <div class="container grid">
+      <div class="box">
+        <img src="D:\Knock\Replace logo 1.png" alt="">
+        <p>Indian Institute of Information Technology Dharwad also known as IIIT DHARWAD, is a Public (Autonomous) Collegesituated in Hubali-Dharwad, Karnataka. IIIT DHARWAD was established in the year 2015. Its campus is spread over 61 Acres of land. IIIT DHARWAD offers admission in various courses like B.Tech. 
+          Various Facilities provided by IIIT DHARWAD are Gym, Sports Complex, Library & Information Center, Practical Lab, IT Centers, Auditorium, Canteen, Outdoor Games, Indoor Games, Girls Hostel, Boys Hostel, Conference Hall, Transport Facility, Placement Cell, Parking, CCTV and etc.</p>
+
+        <div class="icon">
+          <i class="fa fa-facebook-f"></i>
+          <i class="fa fa-instagram"></i>
+          <i class="fa fa-twitter"></i>
+          <i class="fa fa-youtube"></i>
+        </div>
+      </div>
+
+      <div class="box">
+        <h2>Links</h2>
+        <ul>
+          <!--li>Company History</li-->
+          <li>About Us</li>
+          <li>Contact Us</li>
+          <li>Services</li>
+          <li>Privacy Policy</li>
+        </ul>
+      </div>
+
+      <div class="box">
+        <h2>Contact Us</h2>
+        <p>Here are the contact details.
+        </p>
+        <i class="fa fa-location-dot"></i>
+        <label>Ittigatti Rd, near Sattur Colony, Dharwad, 580009, Karnataka.</label> <br>
+        <i class="fa fa-phone"></i>
+        <label>0836 225 0879</label> <br>
+        <i class="fa fa-envelope"></i>
+        <label>contact@iiitdwd.ac.in</label> <br>
+      </div>
+    </div>
+  </footer>
+
+  <div class="legal">
+    <p class="container">Copyright (c) 2022 Copyright Holder All Rights Reserved.</p>
+  </div>
+
+
+
+  <script src="https://kit.fontawesome.com/032d11eac3.js" crossorigin="anonymous"></script>
+</body>
+
+</html>
