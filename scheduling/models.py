@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 # # Create your models here.
 # class Resource(models.Model):
@@ -64,5 +65,17 @@ class Room_details(models.Model):
     roomDescription = models.TextField()
     def __str__(self):
             return self.roomName
+
+class Booking_details(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    room = models.ForeignKey(Room_details, on_delete=models.CASCADE)
+    date = models.DateField()
+    startTime = models.TimeField()
+    endTime = models.TimeField()
+    description = models.TextField()
+    def __str__(self):
+        return self.user.username + " " + self.room.roomName + " " + str(self.date) + " " + str(self.startTime) + " " + str(self.endTime) 
+
+
     
 
