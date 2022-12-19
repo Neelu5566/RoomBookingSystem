@@ -49,20 +49,29 @@ def logoutUser(request):
     logout(request)
     return redirect('login') 
 
-def booking_details(request):
-    # if request.method == "POST":
-    #     name=request.POST['firstName']
-    #     date=request.POST['date']
-    #     slot=request.POST['slot']
-    #     stime=request.POST['stime']
-    #     sparity=request.POST['sparity']
-    #     etime=request.POST['etime']
-    #     eparity=request.POST['eparity']
-    #     description=request.POST['description']
+def booking_details(request,roomName,date):
+    room = Room_details.objects.get(roomName=roomName)
+    slots = Booking_details.objects.filter(date=date,room=room)
+    if request.method == "POST":
+        user = request.user
+        date=request.POST['date']
+        stime=request.POST['stime']
+        sparity=request.POST['sparity']
+        etime=request.POST['etime']
+        eparity=request.POST['eparity']
+        description=request.POST['description']
+
+               
+        Book= Booking_details(room = room,user=user,date=date,startTime=stime,endTime=etime,description=description)
+        Book.save()
+        messages.success(request,"Booking succesfully")
+        return redirect(homePage)
+    else:
+        return render(request,"booking details.html",{'slots':slots,'roomName':roomName})
 
     #     try:
-    #         Book=Booking_detail(fullname=name,date=date,slot=slot,start=stime,start_parity=sparity,end=etime,end_parity=eparity,description=description)
-    #         #user_obj=User.objects.create_user(name=fname+" "+lname,gender=gender,dob=dob,height=height,weight=weight,email=email)
+    #    
+    
             
     #         Book.save()
     #         messages.success(request,"Booking succesfully")
@@ -72,8 +81,6 @@ def booking_details(request):
 
     
     # return render(request,"scheduling/booking details.html")
-    return render(request,"date booking.html")
-    pass
 @csrf_exempt
 def get_slots(request,roomName):
     if request.method == "POST":
@@ -89,10 +96,22 @@ def date_filter(request,roomName):
     if request.method == "POST":
         date = request.POST['date']
         print(date)
-        room = Room_details.objects.get(roomName=roomName)
-        slots = Booking_details.objects.filter(date=date,room=room)
-        print(slots)
-        return render(request,"booking details.html",{'slots':slots})
+        # room = Room_details.objects.get(roomName=roomName)
+        # slots = Booking_details.objects.filter(date=date,room=room)
+        # print(slots)
+        return redirect(f'Booking/{roomName}/{date}')
+        # return render(request,"booking details.html",{'slots':slots})
     else:
         return render(request,"date booking.html",{'roomName':roomName})
+
+def notify_mail(request,roomName,date,startTime,endTime):
+    user = request.user
+    room = Room_details.objects.get(roomName=roomName)
+    booked_slot = Booking_details.objects.get(date=date,startTime=startTime,endTime=endTime,room=room)
+
+    notify = notify_details(notify_mail = user.email,booked_slot=booked_slot)
+    notify.save()
+    messages.success(request,"You will be notified for that slot")
+    return redirect(homePage)
+
 

@@ -56,13 +56,13 @@
 
           <div class="row g-3">
 
-            <div class="col-12">
+            <!-- <div class="col-12">
               <label for="firstName" class="form-label">Full Name</label>
               <input type="text" class="form-control" name="firstName" id="firstName" placeholder="Enter your name" value="" required>
               <div class="invalid-feedback">
                 Valid Full Name is required.
               </div>
-            </div>
+            </div> -->
 
 
             <div class="col-12 ">
@@ -86,8 +86,8 @@
                         <h4>Time : {{slot.startTime}} to {{slot.endTime}}</h4>
                     </li>
                     <li style = "width:auto">
-                        <a href = "">
-                            <button class="button button1" role="button">Notify Me</button>
+                        <a href = "{% url 'notify_mail' roomName slot.date slot.startTime slot.endTime%}">
+                            Notify Me
                         </a>
                     </li>
                     
@@ -97,7 +97,7 @@
             {%endfor%}
             </div>
 
-            <div class="col-12">
+            <!-- <div class="col-12">
               <label for="country" class="form-label">Time Slot</label>
               <select class="form-select" name="slot" id="country" required>
                 <option value="">Choose...</option>
@@ -109,7 +109,7 @@
               <div class="invalid-feedback">
                 Please select a valid country.
               </div>
-            </div>
+            </div> -->
 
             <div class="col-3">
               <label for="order" class="form-label">From</label>
