@@ -24,8 +24,8 @@
       </div>
       <div class="navlinks">
         <ul id="menulist">
+          <li><a href="">Hello {{user.username}}</a> </li>
           <li><a href="#home">home</a> </li>
-          <li><a href="#about">about</a> </li>
           <li><a href="#rooms">rooms</a> </li>
           <li><a href="#contact">contact</a> </li>
           <li><a href="\logout">logout</a> </li>
@@ -246,71 +246,36 @@
             </div>
           </div>
           {%endfor%}
-          <!-- <div class="items">
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="rooms" id = "rooms">
+    <div class="container top">
+      <div class="heading">
+
+        <h2>Your Booked Rooms</h2>
+        <!-- <p>All the available rooms in IIIT Dharwad where you can plan your meetings in a sophisticated environment.
+        </p> -->
+      </div>
+
+      <div class="content mtop">
+        <div class="owl-carousel owl-carousel1 owl-theme">
+          {%for room in user_rooms%}
+          <div class="items">
 
             <div class="text">
-              <h2>120 Seater Room - 1</h2>
+              <h2>{{room.room.roomName}}</h2>
               
-              <p>This room gives you 120 seats and 1 screen equipped with projector.
+              <p>from {{room.startTime}} to {{room.endTime}} on {{room.date}}
               </p>
-              <div class="button flex">
-                <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a>
+              <div class="button flex" >
+                <a href= "{% url 'delete_slot' room.room.roomName room.date room.startTime room.endTime %}"><button class="primary-btn">Delete this room</button></a>
                 
               </div>
             </div>
           </div>
-          <div class="items">
-            
-            <div class="text">
-              <h2>120 Seater Room - 2</h2>
-              
-              <p>This also one of the room which gives you 120 seats and 1 screen equipped with projector.
-              </p>
-              <div class="button flex">
-                <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="items">
-          
-            <div class="text">
-              <h2>Personal Meeting Room</h2>
-              <p>This room is designed for the professional meetings. 
-              </p>
-              <div class="button flex">
-                <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="items">
-            
-            <div class="text">
-              <h2>Video Conference Room</h2>
-              
-              <p>This room is basically designed for the high power meetings to be conducted by the faculties.
-              </p>
-              <div class="button flex">
-                <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a>
-                
-              </div>
-            </div>
-          </div>
-          <div class="items">
-            
-            <div class="text">
-              <h2>Meeting Room</h2>
-              
-              <p>This is just one other room where meetings are scheduled.
-              </p>
-              <div class="button flex">
-                <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a>
-                
-              </div>
-            </div>
-          </div> -->
-
+          {%endfor%}
         </div>
       </div>
     </div>
