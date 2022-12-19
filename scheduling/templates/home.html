@@ -33,7 +33,7 @@
           
           
            
-          <li> <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a> </li>
+          <li> <a href= "#rooms"><button class="primary-btn">BOOK NOW</button></a> </li>
         </ul>
         <span class="fa fa-bars" onclick="menutoggle()"></span>
       </div>
@@ -120,7 +120,7 @@
         </div>
         <div class="items">
           <div class="img">
-            <img src="{% static "scheduling/images/gate.jpg" %}" alt="">
+            <img src="{% static 'scheduling/images/gate.jpg' %}" alt="">
             <p>The above room is currently booked for an event.
           </div>
 
@@ -220,7 +220,7 @@
 </script>
 
 
-  <section class="rooms">
+  <section class="rooms" id = "rooms">
     <div class="container top">
       <div class="heading">
 
@@ -240,7 +240,7 @@
               <p>{{room.roomDescription}}
               </p>
               <div class="button flex" >
-                <a href= "\Booking"><button class="primary-btn">BOOK NOW</button></a>
+                <a href= "{% url 'date_booking' room.roomName %}"><button class="primary-btn">BOOK NOW</button></a>
                 
               </div>
             </div>

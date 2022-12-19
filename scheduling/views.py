@@ -72,13 +72,27 @@ def booking_details(request):
 
     
     # return render(request,"scheduling/booking details.html")
-    return render(request,"booking details.html")
+    return render(request,"date booking.html")
+    pass
 @csrf_exempt
-def get_slots(request):
+def get_slots(request,roomName):
     if request.method == "POST":
         date = request.POST['date']
         print(date)
-        slots = Booking_details.objects.filter(date=date)
+        slots = Booking_details.objects.filter(date=date,room_name=roomName)
         print(slots)
-        return HttpResponse(slots, status=201)
+        return render(request,"booking details.html",{'slots':slots})
+    else:
+        return render(request,"booking details.html")
+
+def date_filter(request,roomName):
+    if request.method == "POST":
+        date = request.POST['date']
+        print(date)
+        room = Room_details.objects.get(roomName=roomName)
+        slots = Booking_details.objects.filter(date=date,room=room)
+        print(slots)
+        return render(request,"booking details.html",{'slots':slots})
+    else:
+        return render(request,"date booking.html",{'roomName':roomName})
 

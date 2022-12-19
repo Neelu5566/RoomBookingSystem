@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+
+    <link rel="stylesheet" href="{% static 'scheduling/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'scheduling/css/form-validation.css' %}">
+
+  </head style = marginleft : 10px>``
+  
+  <body class="bg-light" style ="margin-left:160px; margin-top: 40px;">
+      {% load static %}
+      <div class="container">
+          <div class="row g-0">
+            
+      
+            <div class="col-md-7 col-lg-10">
+              <h1 class="mb-3" style="padding-top:40px; padding-left:65px" >BOOKING DETAILS</h1>
+              <form action="" method ="POST">
+                  {% csrf_token %}
+                  <div class="row g-3">
+                      <div class="col-12 ">
+                          <label for="birthDate" class="form-label">Booking Date</label>
+                          <input type="date" id="birthDate" name="date" class="form-control" >
+                      </div>
+                      <div style="padding-left : 175px">
+                          <button class="w-85 btn btn-primary btn-lg" type="submit" value = "submit">BOOK NOW</button>
+                      </div>
+              </form>
+          </div>
+  
+      </div>
+
+  </body>
+</html>
