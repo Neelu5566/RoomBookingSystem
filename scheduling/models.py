@@ -76,6 +76,14 @@ class Booking_details(models.Model):
     def __str__(self):
         return self.user.username + " " + self.room.roomName + " " + str(self.date) + " " + str(self.startTime) + " " + str(self.endTime) 
 
+class notify_details(models.Model):
+    booked_slot = models.ForeignKey(Booking_details, on_delete=models.CASCADE)
+    notify_mail = models.EmailField()
+    def __str__(self):
+        return self.booked_slot.user.username + " " + self.booked_slot.room.roomName
+
+
+
 
     
 
